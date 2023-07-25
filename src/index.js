@@ -1,45 +1,35 @@
 import cipher from './cipher.js';
-window.addEventListener("load", inicio, true);
-
 //const alfabeto = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-//var inputDecodificado = document.getElementById("message").value;
-//var inputCodificado = document.getElementById("message2");
 
-function inicio(){
-    document.getElementById("message").addEventListener("keyup", function(){
-        this.value = this.value.toUpperCase();
-    
-}, true);
-}
-function Encode(inputCodificado){
-    
-    
-    var solved ="";
-    for( var i= 0; i<inputCodificado.length; i++){
-        var asciNum = inputCodificado.charCodeAt();
-        if (asciNum >=65 && asciNum <= 77){
-            solved += String.fromCharCode(asciNum + 3);
+//Codificar
+const botonCodificar = document.querySelector("#cifrar");
+const texto1 = document.querySelector("#message");
+const desplazamiento = document.querySelector("#desplazamiento");
 
-        }else{
-        solved +=inputCodificado[i];
-        
-    } 
+texto1.addEventListener("keyup", function(){this.value = this.value.toUpperCase()})
+botonCodificar.addEventListener('click', capturaTexto)
 
-    }
-    return solved;
+function capturaTexto(){
     
+    cipher.encode(texto1.value, desplazamiento.value);
+    const Codificado = cipher.encode(texto1.value, desplazamiento.value);
+    document.querySelector("#message2").value = Codificado;
     
 }
 
-function Decode(Decode){
-    var solved ="";
-    for (var i= 0; i<inputDecodificado.length; i++){
-        var asciNum = inputDecodificado.charCodeAt();
-        if (asciNum >= 78 && asciNum <=90){
-            solved += String.fromCharCode(asciNum-3);
-        }else{
-            solved += Decode[i];
-        }
-    }
 
+//DEcodificar
+const botonDecodificar = document.querySelector("#decifrar");
+const texto2 = document.querySelector("#message2");
+
+texto2.addEventListener("keyup", function(){this.value = this.value.toUpperCase()})
+botonDecodificar.addEventListener('click', capturarTexto2)
+
+function capturarTexto2(){
+    
+    cipher.decode(texto2.value, desplazamiento.value);
+    const Decodificado = cipher.decode(texto2.value, desplazamiento.value);
+    document.querySelector("#message").value = Decodificado;
 }
+
+

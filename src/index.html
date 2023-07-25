@@ -2,33 +2,42 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Caesar Cipher</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="index.js" type="module"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
-      <img src="https://images2.alphacoders.com/123/1231556.png" alt="GAMER" class="ilustration1"> 
+      
+      <img src="https://cdn-icons-png.flaticon.com/512/1620/1620476.png" alt="GAMER" class="ilustration1"> 
     </header>
     <div id="root">
       <h1>Bienvenido a cifrado de chats</h1>
       <h2>Aquí podrás cifrar y decifrar texto para hablar de una manera más privada con tus compañeros de juego</h2>
       
       <section class="section1">
-       <p><input type="text" id="message" ></input></p><br>
-       <button type="submit" id="Encode">Encode</button>
+        <textarea id="message" placeholder="Escribe tu texto aquí sin ñ"></textarea><br>
+        <button id="cifrar" >Encode</button>
+      </section>
+
+      <section class="section2">
+        <h3>Desplazamiento</h3>
+        <input type="number" id="desplazamiento" min="1" max="3"/>
       </section>
  
-      <section class="section2">
-        <p><input type="text" id="message2" ></input><br></p> <br>
-       <button type="submit" id="Decode">Decode</button>
+      <section class="section3">
+       <textarea id="message2" placeholder="Escribe tu texto aquí sin ñ"></textarea><br>
+       <button  id="decifrar" >Decode</button>
       </section>
 
 
     </div>
     
 
-
-
-    <script src="index.js" type="module"></script>
+  
+    
   </body>
 </html>
