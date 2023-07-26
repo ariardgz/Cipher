@@ -1,7 +1,7 @@
 const cipher = {
 
 
-  encode: function (texto1, desplazamiento) {
+  encode: function (desplazamiento, texto1) {
 
     let resultado = "";
     let despla = parseInt(desplazamiento);
@@ -34,7 +34,7 @@ const cipher = {
 
 
 
-  decode: function (texto2, desplazamiento) {
+  decode: function (desplazamiento, texto2) {
    
     
     let resultado = "";
