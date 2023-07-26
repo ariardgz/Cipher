@@ -1,20 +1,20 @@
 import cipher from './cipher.js';
-//const alfabeto = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+
 
 //Codificar
 const botonCodificar = document.querySelector("#cifrar");
 const texto1 = document.querySelector("#message");
 const desplazamiento = document.querySelector("#desplazamiento");
 
-texto1.addEventListener("keyup", function(){this.value = this.value.toUpperCase()})
+texto1.addEventListener("keyup", function () { this.value = this.value.toUpperCase() })
 botonCodificar.addEventListener('click', capturaTexto)
 
-function capturaTexto(){
-    
-    cipher.encode(texto1.value, desplazamiento.value);
-    const Codificado = cipher.encode(texto1.value, desplazamiento.value);
-    document.querySelector("#message2").value = Codificado;
-    
+function capturaTexto() {
+
+  cipher.encode(texto1.value, desplazamiento.value);
+  const Codificado = cipher.encode(texto1.value, desplazamiento.value);
+  document.querySelector("#message2").value = Codificado;
+
 }
 
 
@@ -22,14 +22,14 @@ function capturaTexto(){
 const botonDecodificar = document.querySelector("#decifrar");
 const texto2 = document.querySelector("#message2");
 
-texto2.addEventListener("keyup", function(){this.value = this.value.toUpperCase()})
+texto2.addEventListener("keyup", function () { this.value = this.value.toUpperCase() })
 botonDecodificar.addEventListener('click', capturarTexto2)
 
-function capturarTexto2(){
-    
-    cipher.decode(texto2.value, desplazamiento.value);
-    const Decodificado = cipher.decode(texto2.value, desplazamiento.value);
-    document.querySelector("#message").value = Decodificado;
+function capturarTexto2() {
+
+  cipher.decode(texto2.value, desplazamiento.value);
+  const Decodificado = cipher.decode(texto2.value, desplazamiento.value);
+  document.querySelector("#message").value = Decodificado;
 }
 
 
