@@ -12,7 +12,7 @@ botonCodificar.addEventListener('click', capturaTexto)
 function capturaTexto() {
 
   cipher.encode(texto1.value, desplazamiento.value);
-  const Codificado = cipher.encode(texto1.value, desplazamiento.value);
+  const Codificado = cipher.encode( desplazamiento.value, texto1.value);
   document.querySelector("#message2").value = Codificado;
 
 }
@@ -28,7 +28,7 @@ botonDecodificar.addEventListener('click', capturarTexto2)
 function capturarTexto2() {
 
   cipher.decode(texto2.value, desplazamiento.value);
-  const Decodificado = cipher.decode(texto2.value, desplazamiento.value);
+  const Decodificado = cipher.decode( desplazamiento.value, texto2.value);
   document.querySelector("#message").value = Decodificado;
 }
 
